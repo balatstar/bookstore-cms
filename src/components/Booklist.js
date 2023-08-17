@@ -4,7 +4,7 @@ import Book from './Book';
 
 const BookList = ({ books }) => {
   const [bookStates, setBookStates] = useState(
-    books.map(() => ({ isDeleted: true }))
+    books.map(() => ({ isDeleted: true })),
   );
 
   const handleDelete = (index) => {
@@ -15,16 +15,14 @@ const BookList = ({ books }) => {
 
   return (
     <div className="book-list">
-      {books.map((book, index) =>
-        bookStates[index].isDeleted ? (
+      {books.map((book, index) => (bookStates[index].isDeleted ? (
           <Book
-            key={book.id} // Use a unique identifier for each book
+            key={book.id}
             title={book.title}
             author={book.author}
             onDelete={() => handleDelete(index)}
           />
-        ) : null
-      )}
+        ) : null))}
     </div>
   );
 };
@@ -32,10 +30,10 @@ const BookList = ({ books }) => {
 BookList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired, // Use an appropriate data type for the ID
+      id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 
