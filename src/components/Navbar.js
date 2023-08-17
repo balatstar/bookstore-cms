@@ -2,15 +2,14 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const links = [
-  { path: '/', text: 'Home' },
-  { path: 'calculator', text: 'Calculator' },
-  { path: 'quote', text: 'Quote' },
+  { path: '/', text: 'Books' },
+  { path: 'categories', text: 'Categories' },
 ];
 
 function Navbar() {
   return (
     <header>
-      <h1>Title</h1>
+      <h1>Bookstore CMS</h1>
       <nav className="navbar">
         <ul>
           {links.map((link) => (
