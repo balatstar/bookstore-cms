@@ -8,12 +8,12 @@ function App() {
   return (
     <div className="container">
       <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="categories" element={<Categories />} />
-        <Route path="*" element={<NotMatch />} />
-      </Route>
-    </Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="*" element={<NotMatch />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

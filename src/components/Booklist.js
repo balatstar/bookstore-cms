@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Book from './Book'; 
+import PropTypes from 'prop-types';
+import Book from './Book';
 
 const BookList = ({ books }) => {
   const [bookStates, setBookStates] = useState(
-    books.map(() => ({ isDeleted: true }))
+    books.map(() => ({ isDeleted: true })),
   );
 
   const handleDelete = (index) => {
@@ -17,15 +18,25 @@ const BookList = ({ books }) => {
       {books.map((book, index) =>
         bookStates[index].isDeleted ? (
           <Book
-            key={index}
+            key={book.id} // Use a unique identifier for each book
             title={book.title}
             author={book.author}
             onDelete={() => handleDelete(index)}
           />
-        ) : null
+        ) : null,
       )}
     </div>
   );
+};
+
+BookList.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired, // Use an appropriate data type for the ID
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default BookList;
