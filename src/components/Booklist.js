@@ -16,13 +16,13 @@ const BookList = ({ books }) => {
   return (
     <div className="book-list">
       {books.map((book, index) => (bookStates[index].isDeleted ? (
-          <Book
-            key={book.id}
-            title={book.title}
-            author={book.author}
-            onDelete={() => handleDelete(index)}
-          />
-        ) : null))}
+        <Book
+          key={book.id}
+          title={book.title}
+          author={book.author}
+          onDelete={() => handleDelete(index)}
+        />
+      ) : null))}
     </div>
   );
 };
