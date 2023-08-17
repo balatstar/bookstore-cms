@@ -4,7 +4,7 @@ import Book from './Book';
 
 const BookList = ({ books }) => {
   const [bookStates, setBookStates] = useState(
-    books.map(() => ({ isDeleted: true })),
+    books.map(() => ({ isDeleted: true }))
   );
 
   const handleDelete = (index) => {
@@ -23,7 +23,7 @@ const BookList = ({ books }) => {
             author={book.author}
             onDelete={() => handleDelete(index)}
           />
-        ) : null,
+        ) : null
       )}
     </div>
   );
@@ -35,7 +35,7 @@ BookList.propTypes = {
       id: PropTypes.number.isRequired, // Use an appropriate data type for the ID
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
-    }),
+    })
   ).isRequired,
 };
 

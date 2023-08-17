@@ -4,7 +4,7 @@ const Book = ({ title, author, onDelete }) => (
   <div className="book">
     <h3>{title}</h3>
     <p>
-      Author: 
+      Author:
       {author}
     </p>
     <button type="submit" onClick={onDelete}>Delete</button>
