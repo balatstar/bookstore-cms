@@ -29,7 +29,7 @@
 
 # 📖 Bookstore CMS <a name="about-project"></a>
 
-**Bookstore CMS** is a single-page website that allows you to do simple math calculations. It is build on React.
+**Bookstore CMS** is a single-page React website that displays a list of books in your library.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,7 +45,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Makes simple math calculations
+- Displays a list of books with title and author
+- Allows you to add and delete books from the list
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -64,14 +65,14 @@ NPM package manager
 
 ### Setup
 
-Clone this repository to your local folder: https://github.com/balatstar/math-magicians.git
+Clone this repository to your local folder: https://github.com/balatstar/bookstore-cms.git
 
 
 ### Install
 
 Install this project with:
 
-git clone https://github.com/balatstar/math-magicians.git
+git clone https://github.com/balatstar/bookstore-cms.git
 Open directory with your preferred code editor
 Run: npm install
 
@@ -79,10 +80,6 @@ Run: npm install
 
 To run the project, execute the following command:
 
-Option 1 - Live server:
-npm run build
-
-Option 2 - Local dev server:
 npm start
 
 ### Run tests

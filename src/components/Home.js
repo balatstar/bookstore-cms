@@ -1,13 +1,20 @@
 import React from 'react';
+import BookList from './Booklist';
+import Bookform from './Bookform';
 
-function Home() {
+const Home = () => {
+  const books = [
+    { title: 'Book 1', author: 'Author 1' },
+    { title: 'Book 2', author: 'Author 2' },
+  ];
+
   return (
-    <div className="home">
-      <h2>Welcome to our page!</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-      </p>
+    <div className="wrapper">
+      <h2>Book List</h2>
+      <BookList books={books} />
+      <Bookform />
     </div>
   );
-}
+};
+
 export default Home;
