@@ -4,7 +4,7 @@ import BookList from './Booklist';
 import Bookform from './Bookform';
 
 const Home = () => {
-  const books = useSelector(state => state.books);
+  const books = useSelector((state) => state.books);
 
   return (
     <div className="wrapper">
