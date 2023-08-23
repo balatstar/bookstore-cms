@@ -19,7 +19,7 @@ const BookList = () => {
             by
             {book.author}
           </h3>
-          <button type='submit' onClick={() => handleDelete(book.item_id)}>Delete</button>
+          <button type="submit" onClick={() => handleDelete(book.item_id)}>Delete</button>
         </div>
       ))}
     </div>

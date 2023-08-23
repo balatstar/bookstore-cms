@@ -8,14 +8,12 @@ function BookForm() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const generateItemId = () => {
-    return uuidv4();
-  };
+  const generateItemId = () => uuidv4();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook({ 
-      item_id: generateItemId(), title, author, category: '' 
+    dispatch(addBook({
+      item_id: generateItemId(), title, author, category: '',
     }));
     setTitle('');
     setAuthor('');
