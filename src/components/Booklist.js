@@ -17,7 +17,7 @@ const BookList = () => {
         return (
           <div key={itemId}>
             <h3>
-              {book.title} 
+              {book.title}
               &nbsp;by&nbsp;
               {book.author}
             </h3>

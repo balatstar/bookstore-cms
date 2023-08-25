@@ -33,8 +33,8 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, action) => {
-      const { item_id, ...bookData } = action.payload;
-      state[item_id] = [bookData];
+      const { itemId, ...bookData } = action.payload;
+      state[itemId] = [bookData];
     },
     removeBook: (state, action) => {
       delete state[action.payload];
@@ -44,8 +44,8 @@ const booksSlice = createSlice({
     builder.addCase(fetchBooks.fulfilled, (state, action) => action.payload
     );
     builder.addCase(addBookToApi.fulfilled, (state, action) => {
-      const { item_id, ...bookData } = action.payload;
-      state[item_id] = [bookData];
+      const { itemId, ...bookData } = action.payload;
+      state[itemId] = [bookData];
     });
     builder.addCase(removeBookFromApi.fulfilled, (state, action) => {
       delete state[action.payload];
