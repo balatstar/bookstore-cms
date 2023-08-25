@@ -41,8 +41,7 @@ const booksSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchBooks.fulfilled, (state, action) => action.payload
-    );
+    builder.addCase(fetchBooks.fulfilled, (state, action) => action.payload,);
     builder.addCase(addBookToApi.fulfilled, (state, action) => {
       const { itemId, ...bookData } = action.payload;
       state[itemId] = [bookData];
