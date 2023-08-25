@@ -17,7 +17,9 @@ const BookList = () => {
         return (
           <div key={itemId}>
             <h3>
-              {book.title} by {book.author}
+              {book.title} 
+              &nbsp;by&nbsp;
+              {book.author}
             </h3>
             <button type="button" onClick={() => handleDelete(itemId)}>
               Delete

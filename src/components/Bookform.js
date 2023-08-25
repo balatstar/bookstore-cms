@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBookToApi, fetchBooks } from '../redux/books/booksSlice'; // Import fetchBooks
+import { addBookToApi, fetchBooks } from '../redux/books/booksSlice';
 
 function BookForm() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-
+  const [errorMessage, setErrorMessage] = useState(null);
   const generateItemId = () => uuidv4();
 
   const handleSubmit = async (e) => {
@@ -26,8 +26,9 @@ function BookForm() {
       setTitle(''); // Clear the title field
       setAuthor(''); // Clear the author field
       dispatch(fetchBooks());
+      setErrorMessage(null);
     } catch (error) {
-      console.error('Error adding book:', error);
+      setErrorMessage('Error adding book. Please try again later.');
     }
   };
 
@@ -53,6 +54,7 @@ function BookForm() {
       <button type="submit" id="createbook">
         Submit
       </button>
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
     </form>
   );
 }
