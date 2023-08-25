@@ -1,0 +1,188 @@
+.book-wrapper {
+  padding: 40px 4%;
+}
+
+.bookItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.bookDetails {
+  width: 50%;
+}
+
+.bookCategory {
+  color: #999;
+  font-weight: 700;
+}
+
+.bookTitle {
+  font-size: 22px;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.bookAuthor {
+  color: #4386bf;
+}
+
+.bookButtons {
+  margin: 30px 0 10px 0;
+}
+
+.bookButtons button {
+  border: none;
+  background: none;
+  color: #4386bf;
+  border-right: 1px solid #ddd;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.bookButtons button:first-of-type {
+  padding-left: 0;
+}
+
+.bookButtons button:last-of-type {
+  border-right: none;
+}
+
+.bookProgress,
+.bookChapter {
+  width: 25%;
+}
+
+.bookProgress {
+  display: flex;
+  border-right: 1px solid #999;
+  position: relative;
+}
+
+.progressGraph,
+.progressNum {
+  padding: 0 20px;
+}
+
+.progressGraph {
+  position: absolute;
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.progressNum {
+  margin-left: 80px;
+}
+
+.progressPercent {
+  font-size: 32px;
+}
+
+.progressLabel {
+  color: #999;
+}
+
+.bookChapter {
+  padding: 0 0 0 5%;
+}
+
+.chapterHeading {
+  padding: 5px 0;
+  font-size: 13px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.chapterCurrent {
+  font-size: 16px;
+}
+
+.chapterButton {
+  margin: 20px 0;
+  border: none;
+  padding: 10px 20px;
+  background-color: #0290ff;
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.createbook {
+  margin: 50px 0;
+  padding: 30px 0;
+  border-top: 2px solid #ddd;
+}
+
+.createbook h2 {
+  font-size: 20px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.formAddBook {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formAddBook #title,
+.formAddBook #author,
+.formAddBook #createbook {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.formAddBook #title {
+  width: 50%;
+}
+
+.formAddBook #author {
+  width: 25%;
+}
+
+.formAddBook #createbook {
+  width: 20%;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #fff;
+  background-color: #0290ff;
+}
+
+@media (max-width: 960px) {
+  .bookItem {
+    flex-direction: column;
+  }
+
+  .bookItem > * {
+    width: 100%;
+  }
+
+  .bookProgress {
+    margin-top: 20px;
+    flex-direction: column;
+    border-right: 0;
+    height: 80px;
+  }
+
+  .formAddBook {
+    flex-direction: column;
+  }
+
+  .formAddBook #title,
+  .formAddBook #author,
+  .formAddBook #createbook {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
