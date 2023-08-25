@@ -1,34 +1,54 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const initialState = [
-  {
-    item_id: 'item1',
-    title: 'The Great Gatsby',
-    author: 'John Smith',
-    category: 'Fiction',
+export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
+  const response = await axios.get(
+    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zSvbCcjl2BEaoMuEt5BN/books',
+  );
+  return response.data;
+});
+
+export const addBookToApi = createAsyncThunk('books/addBookToApi', async (bookData) => {
+  const response = await axios.post(
+    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zSvbCcjl2BEaoMuEt5BN/books',
+    bookData,
+  );
+  return response.data;
+});
+
+export const removeBookFromApi = createAsyncThunk(
+  'books/removeBookFromApi',
+  async (itemId) => {
+    await axios.delete(
+      `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zSvbCcjl2BEaoMuEt5BN/books/${itemId}`,
+    );
+    return itemId;
   },
-  {
-    item_id: 'item2',
-    title: 'Anna Karenina',
-    author: 'Leo Tolstoy',
-    category: 'Fiction',
-  },
-  {
-    item_id: 'item3',
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
-    category: 'Nonfiction',
-  },
-];
+);
+
+const initialState = {};
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
     addBook: (state, action) => {
-      state.push(action.payload);
+      const { itemId, ...bookData } = action.payload;
+      state[itemId] = [bookData];
     },
-    removeBook: (state, action) => state.filter((book) => book.item_id !== action.payload.item_id),
+    removeBook: (state, action) => {
+      delete state[action.payload];
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchBooks.fulfilled, (state, action) => action.payload);
+    builder.addCase(addBookToApi.fulfilled, (state, action) => {
+      const { itemId, ...bookData } = action.payload;
+      state[itemId] = [bookData];
+    });
+    builder.addCase(removeBookFromApi.fulfilled, (state, action) => {
+      delete state[action.payload];
+    });
   },
 });
 
