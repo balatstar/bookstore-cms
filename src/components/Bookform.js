@@ -17,7 +17,7 @@ function BookForm() {
       item_id: generateItemId(),
       title,
       author,
-      category: '',
+      category: 'Fiction',
     };
 
     // Dispatch
@@ -35,26 +35,28 @@ function BookForm() {
   return (
     <form className="createbook" onSubmit={handleSubmit}>
       <h2>Add new book</h2>
-      <input
-        type="text"
-        name="title"
-        id="title"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="text"
-        name="author"
-        id="author"
-        placeholder="Author"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-      />
-      <button type="submit" id="createbook">
-        Submit
-      </button>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      <div className='formAddBook'>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+        <button type="submit" id="createbook">
+          Add Book
+        </button>
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
+      </div>
     </form>
   );
 }

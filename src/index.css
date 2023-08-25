@@ -1,7 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+div,
+header,
+main,
+footer,
+section {
+  margin: 0;
+  padding: 0;
 }
+
+body,
+button,
+input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  background-color: #f5f6fa;
+}
+
+.container {
+  margin: 50px auto;
+  width: 90%;
+  max-width: 1400px;
+  background-color: #fafafa;
+  box-shadow: 0 0 10px 0 #ccc;
+}
+
