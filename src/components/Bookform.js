@@ -35,7 +35,7 @@ function BookForm() {
   return (
     <form className="createbook" onSubmit={handleSubmit}>
       <h2>Add new book</h2>
-      <div className='formAddBook'>
+      <div className="formAddBook">
         <input
           type="text"
           name="title"

@@ -15,12 +15,12 @@ const BookList = () => {
       {Object.keys(booksState).map((itemId) => {
         const book = booksState[itemId][0];
         return (
-          <div className='bookItem' key={itemId}>
-            <div className='bookDetails'>
-              <div className='bookCategory'>Fiction</div>
-              <h3 className='bookTitle'>{book.title}</h3>
-              <div className='bookAuthor'>{book.author}</div>
-              <div className='bookButtons'>
+          <div className="bookItem" key={itemId}>
+            <div className="bookDetails">
+              <div className="bookCategory">Fiction</div>
+              <h3 className="bookTitle">{book.title}</h3>
+              <div className="bookAuthor">{book.author}</div>
+              <div className="bookButtons">
                 <button type="button">
                   Comments
                 </button>
@@ -32,17 +32,17 @@ const BookList = () => {
                 </button>
               </div>
             </div>
-            <div className='bookProgress'>
-              <div className='progressGraph'></div>
-              <div className='progressNum'>
-                <div className='progressPercent'>64%</div>
-                <div className='progressLabel'>Completed</div>
+            <div className="bookProgress">
+              <div className="progressGraph" />
+              <div className="progressNum">
+                <div className="progressPercent">64%</div>
+                <div className="progressLabel">Completed</div>
               </div>
             </div>
-            <div className='bookChapter'>
-              <div className='chapterHeading'>Current Chapter</div>
-              <div className='chapterCurrent'>Introduction</div>
-              <button type="button" className='chapterButton'>Update Progress</button>
+            <div className="bookChapter">
+              <div className="chapterHeading">Current Chapter</div>
+              <div className="chapterCurrent">Introduction</div>
+              <button type="button" className="chapterButton">Update Progress</button>
             </div>
           </div>
         );

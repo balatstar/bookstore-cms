@@ -92,7 +92,7 @@
 }
 
 .bookChapter {
-  padding: 0 0 0 5% ;
+  padding: 0 0 0 5%;
 }
 
 .chapterHeading {
@@ -160,29 +160,29 @@
 }
 
 @media (max-width: 960px) {
-    .bookItem {
-      flex-direction: column;
-    }
-
-    .bookItem > * {
-      width: 100%;
-    }
-
-    .bookProgress {
-      margin-top: 20px;
-      flex-direction: column;
-      border-right: 0;
-      height: 80px;
-    }
-
-    .formAddBook {
-      flex-direction: column;
-    }
-
-    .formAddBook #title,
-    .formAddBook #author,
-    .formAddBook #createbook {
-      width: 100%;
-      margin-bottom: 10px;
-    }
+  .bookItem {
+    flex-direction: column;
   }
+
+  .bookItem > * {
+    width: 100%;
+  }
+
+  .bookProgress {
+    margin-top: 20px;
+    flex-direction: column;
+    border-right: 0;
+    height: 80px;
+  }
+
+  .formAddBook {
+    flex-direction: column;
+  }
+
+  .formAddBook #title,
+  .formAddBook #author,
+  .formAddBook #createbook {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
