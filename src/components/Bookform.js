@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksSlice';
+import { addBookToApi, fetchBooks } from '../redux/books/booksSlice'; // Import fetchBooks
 
 function BookForm() {
   const dispatch = useDispatch();
@@ -10,13 +10,25 @@ function BookForm() {
 
   const generateItemId = () => uuidv4();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(addBook({
-      item_id: generateItemId(), title, author, category: '',
-    }));
-    setTitle('');
-    setAuthor('');
+
+    const bookData = {
+      item_id: generateItemId(),
+      title,
+      author,
+      category: '',
+    };
+
+    // Dispatch
+    try {
+      await dispatch(addBookToApi(bookData));
+      setTitle(''); // Clear the title field
+      setAuthor(''); // Clear the author field
+      dispatch(fetchBooks());
+    } catch (error) {
+      console.error('Error adding book:', error);
+    }
   };
 
   return (
